@@ -1,0 +1,37 @@
+﻿@using MaiorRiscoDeContaminacaoCovid19.Models
+@model CountriesJson
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="text-align:center">
+    <h3>Casos de Covid-19 confirmados e Pessoas Recuperadas por país</h3>
+</div>
+
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Pais</th>
+            <th scope="col">Sigla</th>
+            <th scope="col">Total de Casos Confirmados</th>
+            <th scope="col">Total de Recuperados</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var pais in Model.Countries)
+         {
+            <tr>
+            <td>@pais.Coutry</td>
+            <td>@pais.CountryCode</td>
+            <td>@pais.TotalConfirmed</td>
+            <td>@pais.TotalRecovered</td>
+            </tr>
+         }
+    </tbody>
+
+</table>
